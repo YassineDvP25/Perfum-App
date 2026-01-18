@@ -1,6 +1,9 @@
 // features/auth/login/login_screen.dart
 import 'package:billezza/core/constants/assets.dart';
 import 'package:billezza/core/theme/colors.dart';
+
+import 'package:billezza/features/auth/login/widgets/input_field.dart';
+import 'package:billezza/features/auth/login/widgets/social_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -16,65 +19,13 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           children: [
             /// ================= HEADER =================
-          SizedBox(
-
-  height: MediaQuery.of(context).size.height * 0.42,
-  width: double.infinity,
-  child: Stack(
-
-    children: [
-      /// Background Image
-      Positioned.fill(
-        child: Image.asset(
-          Assets.loginHeader,
-          fit: BoxFit.cover,
-        ),
-      ),
-
-      /// Dark overlay
-      Positioned.fill(
-        child: Container(
-          color: Colors.black.withOpacity(0.28),
-        ),
-      ),
-
-      /// LEFT WHITE ORGANIC SHAPE (مثل المثال تمامًا)
-      Positioned(
-        left: 0,
-        top: 0,
-        bottom: 0,
-        child: ClipPath(
-          clipper: _LeftOrganicClipper(),
-          child: Container(
-            width: 120,
-            color: Colors.white,
-          ),
-        ),
-      ),
-
-      /// BOTTOM CURVE
-      Align(
-        alignment: Alignment.bottomCenter,
-        child: ClipPath(
-          clipper: _BottomLuxuryCurveClipper(),
-          child: Container(
-            height: 160,
-            color: Colors.white,
-          ),
-        ),
-      ),
-    ],
-  ),
-),
-
-
+          CurvedHeader(height: height * 0.4, imagePath: Assets.loginHeader),
             /// ================= CONTENT =================
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 8),
 
                   const Text(
                     'Welcome back',
@@ -89,22 +40,19 @@ class LoginScreen extends StatelessWidget {
 
                   const Text(
                     'Enter your email and password',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey,
-                    ),
+                    style: TextStyle(fontSize: 14, color: Colors.grey),
                   ),
 
                   const SizedBox(height: 28),
 
-                  const _InputField(
+                  const InputField(
                     hint: 'Email-ID',
                     icon: Icons.email_outlined,
                   ),
 
                   const SizedBox(height: 16),
 
-                  const _InputField(
+                  const InputField(
                     hint: 'Password',
                     icon: Icons.lock_outline,
                     obscure: true,
@@ -139,10 +87,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                       child: const Text(
                         'Log In',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                        ),
+                        style: TextStyle(fontSize: 16, color: Colors.white),
                       ),
                     ),
                   ),
@@ -150,10 +95,7 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(height: 22),
 
                   const Center(
-                    child: Text(
-                      'or',
-                      style: TextStyle(color: Colors.grey),
-                    ),
+                    child: Text('or', style: TextStyle(color: Colors.grey)),
                   ),
 
                   const SizedBox(height: 18),
@@ -161,9 +103,9 @@ class LoginScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
-                      _SocialButton(icon: Assets.googleLogo),
+                      SocialButton(icon: Assets.googleLogo),
                       SizedBox(width: 16),
-                      _SocialButton(icon: Assets.appleLogo),
+                      SocialButton(icon: Assets.appleLogo),
                     ],
                   ),
 
@@ -198,19 +140,78 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-/// ================= CLIPPER =================
-class _BottomLuxuryCurveClipper extends CustomClipper<Path> {
+class CurvedHeader extends StatelessWidget {
+  final double height;
+  final String imagePath;
+  final Widget? child;
+
+  const CurvedHeader({
+    super.key,
+    required this.height,
+    required this.imagePath,
+    this.child,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: height,
+      width: double.infinity,
+      child: Stack(
+        children: [
+          // Background Image
+          Positioned.fill(
+            bottom: height * 0.24,
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover,
+            ),
+          ),
+
+          // // Dark Overlay (اختياري لجعل النص أوضح)
+          // Positioned.fill(
+          //   child: Container(
+          //     color: Colors.black.withOpacity(0.25),
+          //   ),
+          // ),
+
+          // Curved White Shape
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: ClipPath(
+              clipper: BottomCurveClipper(),
+              child: Container(
+                height: height * 0.35,
+                color: Colors.white,
+              ),
+            ),
+          ),
+
+          // Optional content (Logo / Text)
+          if (child != null)
+            Positioned.fill(
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: child!,
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
+class BottomCurveClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     final path = Path();
 
-    path.moveTo(0, 60);
+    path.lineTo(0, 40);
 
     path.quadraticBezierTo(
       size.width * 0.5,
-      -30,
+      -40,
       size.width,
-      60,
+      40,
     );
 
     path.lineTo(size.width, size.height);
@@ -221,93 +222,7 @@ class _BottomLuxuryCurveClipper extends CustomClipper<Path> {
   }
 
   @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
-}
-
-class _LeftOrganicClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    final path = Path();
-
-    path.moveTo(0, 0);
-    path.lineTo(size.width * 0.55, 0);
-
-    path.quadraticBezierTo(
-      size.width,
-      size.height * 0.25,
-      size.width * 0.55,
-      size.height * 0.5,
-    );
-
-    path.quadraticBezierTo(
-      0,
-      size.height * 0.75,
-      size.width * 0.55,
-      size.height,
-    );
-
-    path.lineTo(0, size.height);
-    path.close();
-
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
-}
-
-
-
-
-/// ================= INPUT =================
-class _InputField extends StatelessWidget {
-  final String hint;
-  final IconData icon;
-  final bool obscure;
-
-  const _InputField({
-    required this.hint,
-    required this.icon,
-    this.obscure = false,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      obscureText: obscure,
-      decoration: InputDecoration(
-        prefixIcon: Icon(icon, color: AppColors.gold),
-        hintText: hint,
-        filled: true,
-        fillColor: Colors.white,
-        contentPadding: const EdgeInsets.symmetric(vertical: 14),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(24),
-          borderSide: BorderSide(
-            color: AppColors.gold.withOpacity(0.4),
-          ),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(24),
-          borderSide: const BorderSide(color: AppColors.gold),
-        ),
-      ),
-    );
-  }
-}
-
-/// ================= SOCIAL =================
-class _SocialButton extends StatelessWidget {
-  final String icon;
-
-  const _SocialButton({required this.icon});
-
-  @override
-  Widget build(BuildContext context) {
-    return CircleAvatar(
-      radius: 22,
-      backgroundColor: Colors.grey.shade200,
-      child: Image.asset(icon, width: 20),
-    );
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
+    return false;
   }
 }
