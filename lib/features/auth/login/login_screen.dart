@@ -1,6 +1,7 @@
-// features/auth/login/login_screen.dart
 import 'package:billezza/core/constants/assets.dart';
 import 'package:billezza/core/theme/colors.dart';
+import 'package:billezza/features/auth/components/elevate_button.dart';
+import 'package:billezza/features/auth/login/classes/curved_header.dart';
 
 import 'package:billezza/features/auth/login/widgets/input_field.dart';
 import 'package:billezza/features/auth/login/widgets/social_button.dart';
@@ -19,14 +20,14 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           children: [
             /// ================= HEADER =================
-          CurvedHeader(height: height * 0.4, imagePath: Assets.loginHeader),
+            CurvedHeader(height: height * 0.4, imagePath: Assets.loginHeader),
+
             /// ================= CONTENT =================
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   const Text(
                     'Welcome back',
                     style: TextStyle(
@@ -72,25 +73,7 @@ class LoginScreen extends StatelessWidget {
                   ),
 
                   const SizedBox(height: 10),
-
-                  SizedBox(
-                    width: double.infinity,
-                    height: 48,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.gold,
-                        elevation: 0,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                      ),
-                      child: const Text(
-                        'Log In',
-                        style: TextStyle(fontSize: 16, color: Colors.white),
-                      ),
-                    ),
-                  ),
+                  const AuthElevateButton(),
 
                   const SizedBox(height: 22),
 
@@ -137,92 +120,5 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class CurvedHeader extends StatelessWidget {
-  final double height;
-  final String imagePath;
-  final Widget? child;
-
-  const CurvedHeader({
-    super.key,
-    required this.height,
-    required this.imagePath,
-    this.child,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: height,
-      width: double.infinity,
-      child: Stack(
-        children: [
-          // Background Image
-          Positioned.fill(
-            bottom: height * 0.24,
-            child: Image.asset(
-              imagePath,
-              fit: BoxFit.cover,
-            ),
-          ),
-
-          // // Dark Overlay (اختياري لجعل النص أوضح)
-          // Positioned.fill(
-          //   child: Container(
-          //     color: Colors.black.withOpacity(0.25),
-          //   ),
-          // ),
-
-          // Curved White Shape
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: ClipPath(
-              clipper: BottomCurveClipper(),
-              child: Container(
-                height: height * 0.35,
-                color: Colors.white,
-              ),
-            ),
-          ),
-
-          // Optional content (Logo / Text)
-          if (child != null)
-            Positioned.fill(
-              child: Padding(
-                padding: const EdgeInsets.all(24),
-                child: child!,
-              ),
-            ),
-        ],
-      ),
-    );
-  }
-}
-class BottomCurveClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    final path = Path();
-
-    path.lineTo(0, 40);
-
-    path.quadraticBezierTo(
-      size.width * 0.5,
-      -40,
-      size.width,
-      40,
-    );
-
-    path.lineTo(size.width, size.height);
-    path.lineTo(0, size.height);
-    path.close();
-
-    return path;
-  }
-
-  @override
-  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    return false;
   }
 }
