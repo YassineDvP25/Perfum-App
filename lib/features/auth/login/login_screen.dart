@@ -18,21 +18,14 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
+          
           children: [
             /// ================= HEADER =================
-<<<<<<< HEAD
-            CurvedHeader(height: height * 0.4, imagePath: Assets.loginHeader),
+            CurvedHeader(height: height * 0.37, imagePath: Assets.loginHeader),
 
             /// ================= CONTENT =================
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Column(
-=======
-            CurvedHeader(height: height * 0.30, imagePath: Assets.loginHeader),
-
-            /// ================= CONTENT =================
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24 , vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 24 , vertical: 25),
 
               child: Column(
                 
@@ -54,14 +47,14 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 6),
+                  const SizedBox(height: 28),
 
                   const Text(
                     'Enter your email and password',
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
+                    style: TextStyle(fontSize: 14, color: Colors.grey ),
                   ),
 
-                  const SizedBox(height: 28),
+                  const SizedBox(height: 10),
 
                   const InputField(
                     hint: 'Email-ID',
