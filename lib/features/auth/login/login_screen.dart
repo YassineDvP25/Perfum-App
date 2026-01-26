@@ -20,19 +20,36 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           children: [
             /// ================= HEADER =================
+<<<<<<< HEAD
             CurvedHeader(height: height * 0.4, imagePath: Assets.loginHeader),
 
             /// ================= CONTENT =================
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
+=======
+            CurvedHeader(height: height * 0.30, imagePath: Assets.loginHeader),
+
+            /// ================= CONTENT =================
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24 , vertical: 20),
+
+              child: Column(
+                
+>>>>>>> d528a114c4fcd0e66961428822a92f895bfc9b59
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
                     'Welcome back',
                     style: TextStyle(
+<<<<<<< HEAD
                       fontSize: 28,
                       fontWeight: FontWeight.w600,
+=======
+                      fontFamily: 'Italiana',
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+>>>>>>> d528a114c4fcd0e66961428822a92f895bfc9b59
                       color: AppColors.backgroundDark,
                     ),
                   ),

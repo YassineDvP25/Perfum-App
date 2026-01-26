@@ -81,6 +81,11 @@ flutter:
     - assets/fonts/
     - assets/icons/
 
+  fonts:
+    - family: Italiana
+      fonts:
+       - asset: assets/fonts/Italiana-Regular.ttf
+
   # fonts:
   #   - family: CustomFont
   #     fonts:
