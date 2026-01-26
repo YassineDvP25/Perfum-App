@@ -40,14 +40,14 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 6),
+                  const SizedBox(height: 28),
 
                   const Text(
                     'Enter your email and password',
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
+                    style: TextStyle(fontSize: 14, color: Colors.grey ),
                   ),
 
-                  const SizedBox(height: 28),
+                  const SizedBox(height: 10),
 
                   const InputField(
                     hint: 'Email-ID',

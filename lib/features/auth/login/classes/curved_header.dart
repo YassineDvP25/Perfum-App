@@ -18,7 +18,7 @@ class CurvedHeader extends StatelessWidget {
     return Card(
       margin: EdgeInsets.zero,
 
-      elevation: 3,
+      elevation: 4,
       child: SizedBox(
         
         height: height,
