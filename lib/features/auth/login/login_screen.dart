@@ -31,8 +31,9 @@ class LoginScreen extends StatelessWidget {
                   const Text(
                     'Welcome back',
                     style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Italiana',
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
                       color: AppColors.backgroundDark,
                     ),
                   ),
