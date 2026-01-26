@@ -18,6 +18,7 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
+          
           children: [
             /// ================= HEADER =================
             CurvedHeader(height: height * 0.37, imagePath: Assets.loginHeader),
