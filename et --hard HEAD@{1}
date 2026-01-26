@@ -1,0 +1,25 @@
+[33m062ec1f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeatures/login[m[33m, [m[1;32mfeatures/signup[m[33m, [m[1;32mdevelopment[m[33m)[m HEAD@{0}: reset: moving to development
+[33m29fbb44[m[33m ([m[1;31morigin/features/login[m[33m)[m HEAD@{1}: checkout: moving from features/signup to features/login
+[33m062ec1f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeatures/login[m[33m, [m[1;32mfeatures/signup[m[33m, [m[1;32mdevelopment[m[33m)[m HEAD@{2}: checkout: moving from development to features/signup
+[33m062ec1f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeatures/login[m[33m, [m[1;32mfeatures/signup[m[33m, [m[1;32mdevelopment[m[33m)[m HEAD@{3}: checkout: moving from features/signup to development
+[33m062ec1f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeatures/login[m[33m, [m[1;32mfeatures/signup[m[33m, [m[1;32mdevelopment[m[33m)[m HEAD@{4}: reset: moving to development
+[33ma7ab859[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/development[m[33m, [m[1;32mmain[m[33m)[m HEAD@{5}: checkout: moving from features/login to features/signup
+[33m29fbb44[m[33m ([m[1;31morigin/features/login[m[33m)[m HEAD@{6}: commit: feat(auth/ui): add curved header and reusable auth components
+[33m1d5ef47[m HEAD@{7}: commit: feat(auth): redesign login screen with luxury UI assets
+[33m8de7e0d[m HEAD@{8}: checkout: moving from development to features/login
+[33m062ec1f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeatures/login[m[33m, [m[1;32mfeatures/signup[m[33m, [m[1;32mdevelopment[m[33m)[m HEAD@{9}: commit: added splash screen
+[33maed2e21[m HEAD@{10}: checkout: moving from features/splash to development
+[33mfbf93da[m[33m ([m[1;32mfeatures/splash[m[33m)[m HEAD@{11}: checkout: moving from development to features/splash
+[33maed2e21[m HEAD@{12}: commit (merge): finaly modifications
+[33m8de7e0d[m HEAD@{13}: merge features/login: Fast-forward
+[33ma7ab859[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/development[m[33m, [m[1;32mmain[m[33m)[m HEAD@{14}: checkout: moving from features/login to development
+[33m8de7e0d[m HEAD@{15}: checkout: moving from development to features/login
+[33ma7ab859[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/development[m[33m, [m[1;32mmain[m[33m)[m HEAD@{16}: checkout: moving from features/login to development
+[33m8de7e0d[m HEAD@{17}: commit: added login screen
+[33ma7ab859[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/development[m[33m, [m[1;32mmain[m[33m)[m HEAD@{18}: checkout: moving from features/splash to features/login
+[33mfbf93da[m[33m ([m[1;32mfeatures/splash[m[33m)[m HEAD@{19}: commit: first commit
+[33m85b1974[m[33m ([m[1;31morigin/features/splash[m[33m)[m HEAD@{20}: commit: added splash screen
+[33ma7ab859[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/development[m[33m, [m[1;32mmain[m[33m)[m HEAD@{21}: checkout: moving from development to features/splash
+[33ma7ab859[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/development[m[33m, [m[1;32mmain[m[33m)[m HEAD@{22}: checkout: moving from main to development
+[33ma7ab859[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/development[m[33m, [m[1;32mmain[m[33m)[m HEAD@{23}: Branch: renamed refs/heads/main to refs/heads/main
+[33ma7ab859[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/development[m[33m, [m[1;32mmain[m[33m)[m HEAD@{25}: commit (initial): first commit
