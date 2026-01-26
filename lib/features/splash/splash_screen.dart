@@ -1,8 +1,7 @@
 // features/splash/splash_screen.dart
 import 'dart:async';
 import 'package:billezza/core/theme/colors.dart';
-import 'package:billezza/features/home/auth/login/login_screen.dart';
-import 'package:billezza/features/home/views/home_screen.dart';
+import 'package:billezza/features/auth/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import '../../core/constants/assets.dart';
 
