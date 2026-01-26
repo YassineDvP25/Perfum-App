@@ -15,45 +15,50 @@ class CurvedHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      
-      height: height,
-      width: double.infinity,
-      child: Stack(
+    return Card(
+      margin: EdgeInsets.zero,
+
+      elevation: 3,
+      child: SizedBox(
         
-        children: [
-          // Background Image
-          Positioned.fill(
-            child: Image.asset(
-              imagePath,
-              fit: BoxFit.fitWidth,
+        height: height,
+        width: double.infinity,
+        child: Stack(
+          
+          children: [
+            // Background Image
+            Positioned.fill(
+              child: Image.asset(
+                imagePath,
+                fit: BoxFit.fitWidth,
+              ),
             ),
-          ),
-
-          // Dark Overlay (اختياري لجعل النص أوضح)
-          // Positioned.fill(
-          //   child: Container(
-          //     color: Colors.black.withOpacity(0.25),
-          //   ),
-          // ),
-
-          // Align(
-          //   alignment: Alignment.bottomCenter,
-          //   child: Container(
-          //     height: height * 0.30,
-          //     color: Colors.white,
-          //   ),
-          // ),
-
-          // // Optional content (Logo / Text)
-          // if (child != null)
-          //   Positioned.fill(
-          //     child: Padding(
-          //       padding: const EdgeInsets.all(24),
-          //       child: child!,
-          //     ),
-          //   ),
-        ],
+      
+            // Dark Overlay (اختياري لجعل النص أوضح)
+            // Positioned.fill(
+            //   child: Container(
+            //     color: Colors.black.withOpacity(0.25),
+            //   ),
+            // ),
+      
+            // Align(
+            //   alignment: Alignment.bottomCenter,
+            //   child: Container(
+            //     height: height * 0.30,
+            //     color: Colors.white,
+            //   ),
+            // ),
+      
+            // // Optional content (Logo / Text)
+            // if (child != null)
+            //   Positioned.fill(
+            //     child: Padding(
+            //       padding: const EdgeInsets.all(24),
+            //       child: child!,
+            //     ),
+            //   ),
+          ],
+        ),
       ),
     );
   }

@@ -20,11 +20,11 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           children: [
             /// ================= HEADER =================
-            CurvedHeader(height: height * 0.38, imagePath: Assets.loginHeader),
+            CurvedHeader(height: height * 0.37, imagePath: Assets.loginHeader),
 
             /// ================= CONTENT =================
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24 , vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 24 , vertical: 25),
 
               child: Column(
                 
