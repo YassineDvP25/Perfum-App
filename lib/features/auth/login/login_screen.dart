@@ -29,20 +29,14 @@ class LoginScreen extends StatelessWidget {
 
               child: Column(
                 
->>>>>>> d528a114c4fcd0e66961428822a92f895bfc9b59
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
                     'Welcome back',
                     style: TextStyle(
-<<<<<<< HEAD
                       fontSize: 28,
                       fontWeight: FontWeight.w600,
-=======
                       fontFamily: 'Italiana',
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
->>>>>>> d528a114c4fcd0e66961428822a92f895bfc9b59
                       color: AppColors.backgroundDark,
                     ),
                   ),

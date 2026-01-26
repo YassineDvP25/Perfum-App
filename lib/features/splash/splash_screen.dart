@@ -2,10 +2,7 @@
 import 'dart:async';
 import 'package:billezza/core/theme/colors.dart';
 import 'package:billezza/features/auth/login/login_screen.dart';
-<<<<<<< HEAD
-
-=======
->>>>>>> d528a114c4fcd0e66961428822a92f895bfc9b59
+ 
 import 'package:flutter/material.dart';
 import '../../core/constants/assets.dart';
 

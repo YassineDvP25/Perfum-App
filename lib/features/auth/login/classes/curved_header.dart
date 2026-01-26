@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-import 'package:billezza/features/auth/login/widgets/bottom_curve_clipper.dart';
->>>>>>> d528a114c4fcd0e66961428822a92f895bfc9b59
 import 'package:flutter/material.dart';
 
 class CurvedHeader extends StatelessWidget {
