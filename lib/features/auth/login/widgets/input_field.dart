@@ -21,6 +21,10 @@ class InputField extends StatelessWidget {
       decoration: InputDecoration(
         prefixIcon: Icon(icon, color: AppColors.gold),
         hintText: hint,
+        hintStyle: TextStyle(
+          color: Colors.grey[400],
+          fontSize: 14,
+        ),
         filled: true,
         fillColor: Colors.white,
         contentPadding: const EdgeInsets.symmetric(vertical: 14),

@@ -1,7 +1,7 @@
-import 'package:billezza/features/auth/login/login_screen.dart';
+import 'package:billezza/features/auth/views/login_screen.dart';
+import 'package:billezza/features/auth/views/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'routes.dart';
-import '../../features/splash/splash_screen.dart';
 import '../../features/home/views/home_screen.dart';
 
 /// Application Router
@@ -10,8 +10,8 @@ class AppRouter {
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      // case Routes.splash:
-      //   return _buildRoute(const SplashScreen(), settings);
+      case Routes.signup:
+        return _buildRoute(const SignUpScreen(), settings);
       
       case Routes.login:
         return _buildRoute(const LoginScreen(), settings);
